@@ -1,0 +1,19 @@
+{
+  "name": "oop-ts",
+  "version": "1.0.0",
+  "description": "POO",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "POO"
+  ],
+  "author": "AgathePons",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}
