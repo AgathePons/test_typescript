@@ -4,9 +4,13 @@
  * @version 1.0.0
  */
 
+import { StagiaireModel } from "./models/stagiaire-model";
+
 export class Main {
     public constructor() {
-        console.log('Hello TS');
+        const stagiaire: StagiaireModel = new StagiaireModel();
+        stagiaire.setBirthDate(new Date(2000, 5, 25));
+        console.log(`stagiaire ${stagiaire.firstName} ${stagiaire.lastName} né le ${stagiaire.getBirthDate()}`);
     }
 }
 
