@@ -72,4 +72,8 @@ Pour changer de branch
 git checkout nomDeLaBranch
 ```
 
-Pour créer une nouvelle branch et se
+Pour créer une nouvelle branch et se positionner dessus directement
+
+```cmd
+git checkout -b nomDeLaNouvelleBranche
+```
