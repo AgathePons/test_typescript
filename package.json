@@ -4,7 +4,8 @@
   "description": "POO",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node_modules\\.bin\\ts-node src\\main",
   },
   "keywords": [
     "typescript",
