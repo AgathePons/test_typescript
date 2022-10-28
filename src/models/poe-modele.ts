@@ -4,10 +4,27 @@
  * @version 1.0.0
  */
 
+import { StagiaireModel } from "./stagiaire-model";
+
  export class PoeModel {
     public title: string = '';
     private startDate: Date = new Date();
     private endDate: Date = new Date();
+
+    private stagiaires: StagiaireModel[] = [];
+
+    public addStagiaire(stagiaire: StagiaireModel): void {
+        if (!this.stagiaires.includes(stagiaire))
+        this.stagiaires.push(stagiaire);
+    }
+
+    public listStagiaires(): string {
+        let string: string = '';
+        for (let stagiaire of this.stagiaires) {
+            string += `${stagiaire.firstName} ${stagiaire.lastName}\n`;
+        }
+        return string;
+    }
 
     public setDates(startDate: Date, endDate: Date): void {
         if (startDate.getTime() < endDate.getTime()) {

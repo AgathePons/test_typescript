@@ -10,25 +10,32 @@ import { StagiaireModel } from "./models/stagiaire-model";
 export class Main {
     public constructor() {
 
-        // init stagiaire
-        const stagiaire: StagiaireModel = new StagiaireModel();
-        stagiaire.setBirthDate(new Date(1991, 2, 4));
-        stagiaire.firstName = 'Agathe';
-        stagiaire.lastName = 'Pons';
+        // init stagiaires
+        const stagiaireAgathe: StagiaireModel = new StagiaireModel();
+        stagiaireAgathe.setBirthDate(new Date(1991, 2, 4));
+        stagiaireAgathe.firstName = 'Agathe';
+        stagiaireAgathe.lastName = 'Pons';
+
+        const stagiaireJeanMich: StagiaireModel = new StagiaireModel();
+        stagiaireJeanMich.setBirthDate(new Date(1968, 8, 14));
+        stagiaireJeanMich.firstName = 'Jean-Mich';
+        stagiaireJeanMich.lastName = 'Much';
 
         // init poe
         const poe: PoeModel = new PoeModel;
         poe.title = 'Fullstack Java Angular';
 
         // set poe to the stagiaire
-        stagiaire.poe = poe;
+        stagiaireAgathe.poe = poe;
 
-        // try to fail
-        poe.setDates(new Date(2022, 3, 4), new Date(2021, 3, 6));
-        console.log(poe.toString());
         // try to success
         poe.setDates(new Date(2020, 3, 4), new Date(2021, 3, 6));
-        console.log(poe.toString());
+
+        // set stagiaire to poe
+        poe.addStagiaire(stagiaireAgathe);
+        poe.addStagiaire(stagiaireJeanMich);
+        poe.addStagiaire(stagiaireAgathe);
+        console.log(poe.listStagiaires());
     }
 }
 
