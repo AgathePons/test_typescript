@@ -30,6 +30,7 @@ class Main {
     stagiaireAgathe.poe = poe;
 
     // try to success
+    poe.setDates(new Date(2020, 3, 4), new Date(2019, 3, 6));
     poe.setDates(new Date(2020, 3, 4), new Date(2021, 3, 6));
 
     // set stagiaire to poe
