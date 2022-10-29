@@ -1,2 +1,5 @@
 node_modules/
+tests/
 .eslintrc.cjs
+jest.config.ts
+babel.config.js
