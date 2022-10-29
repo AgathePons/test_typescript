@@ -38,6 +38,7 @@ class Main {
     poe.addStagiaire(stagiaireJeanMich);
     poe.addStagiaire(stagiaireAgathe);
     debug(poe.listStagiaires());
+    console.log(poe.listStagiaires());
   }
 }
 
