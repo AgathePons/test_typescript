@@ -48,20 +48,8 @@ class PoeModel {
     }
   }
 
-  public setStartDate(startDate : Date): void {
-    if (this.endDate > startDate) {
-      this.startDate = startDate;
-    }
-  }
-
   public getStartDate(): Date {
     return this.startDate;
-  }
-
-  public setEndDate(endDate : Date): void {
-    if (this.startDate < endDate) {
-      this.endDate = endDate;
-    }
   }
 
   public getEndDate(): Date {
@@ -69,9 +57,7 @@ class PoeModel {
   }
 
   public toString(): string {
-    return `
-    ${this.title} du ${this.startDate.getDate()}/${this.startDate.getMonth() + 1}/${this.startDate.getFullYear()} au ${this.endDate.getDate()}/${this.endDate.getMonth() + 1}/${this.endDate.getFullYear()}
-    `;
+    return `${this.title} du ${this.startDate.getDate()}/${this.startDate.getMonth() + 1}/${this.startDate.getFullYear()} au ${this.endDate.getDate()}/${this.endDate.getMonth() + 1}/${this.endDate.getFullYear()}`;
   }
 }
 
