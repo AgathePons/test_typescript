@@ -1,6 +1,6 @@
 # Questions
 
-si un attribut de classe est privé, comment le tester le setteur sans faire intervenir le getteur ?
+Si un attribut de classe est privé, comment le tester le setteur sans faire intervenir le getteur ?
 ou par exemple comment tester addStagiaire() ?
 
 par exemple pour la birthDate, si on fait:
