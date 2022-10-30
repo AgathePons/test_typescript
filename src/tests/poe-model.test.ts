@@ -45,12 +45,12 @@ describe('PoeModel methods', () => {
   });
 
   poe.setDates(new Date(2021, 3, 6), new Date(2020, 3, 4));
-  test('setDates: startDate should be 2020-3-4', () => {
+  test('setDates: (inverted dates) startDate should be 2020-3-4', () => {
     expect(poe.getStartDate().getDate()).toBe(4);
     expect(poe.getStartDate().getMonth()).toBe(3);
     expect(poe.getStartDate().getFullYear()).toBe(2020);
   });
-  test('setDates: endDate should be 2021-3-6', () => {
+  test('setDates: (inverted dates) endDate should be 2021-3-6', () => {
     expect(poe.getEndDate().getDate()).toBe(6);
     expect(poe.getEndDate().getMonth()).toBe(3);
     expect(poe.getEndDate().getFullYear()).toBe(2021);
