@@ -25,16 +25,14 @@ export class Main {
         const poe: PoeModel = new PoeModel;
         poe.title = 'Fullstack Java Angular';
 
-        // set poe to the stagiaire
-        stagiaireAgathe.poe = poe;
-
         // try to success
         poe.setDates(new Date(2020, 3, 4), new Date(2021, 3, 6));
 
         // set stagiaire to poe
-        poe.addStagiaire(stagiaireAgathe);
-        poe.addStagiaire(stagiaireJeanMich);
-        poe.addStagiaire(stagiaireAgathe);
+        stagiaireAgathe.setPoe(poe);
+        stagiaireJeanMich.setPoe(poe);
+        stagiaireAgathe.setPoe(poe);
+        console.log(stagiaireAgathe.toString());
         console.log(poe.listStagiaires());
     }
 }
