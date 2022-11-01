@@ -11,7 +11,7 @@ import { StagiaireModel } from "./stagiaire-model";
     private startDate: Date = new Date();
     private endDate: Date = new Date();
 
-    private stagiaires: StagiaireModel[] = [];
+    private stagiaires: StagiaireModel[] = []; // Array<StagiaireModel>
 
     public addStagiaire(stagiaire: StagiaireModel): void {
         if (!this.stagiaires.includes(stagiaire))
@@ -19,11 +19,17 @@ import { StagiaireModel } from "./stagiaire-model";
     }
 
     public listStagiaires(): string {
-        let string: string = '';
-        for (let stagiaire of this.stagiaires) {
-            string += `${stagiaire.firstName} ${stagiaire.lastName}\n`;
+        let output: string = `Liste des stagiaires de ${this.title}`;
+        if (this.stagiaires.length) {
+            for (let stagiaire of this.stagiaires) {
+                output += `${stagiaire.firstName} ${stagiaire.lastName}\n`;
+            }
         }
-        return string;
+        else {
+            output = `Any inten in ${this.title}`;
+        }
+        
+        return output;
     }
 
     public setDates(startDate: Date, endDate: Date): void {
@@ -37,20 +43,8 @@ import { StagiaireModel } from "./stagiaire-model";
         }
     }
 
-    public setStartDate(startDate : Date): void {
-        if (this.endDate > startDate ) {
-            this.startDate = startDate;
-        }
-    }
-
     public getStartDate(): Date {
         return this.startDate;
-    }
-
-    public setEndDate(endDate : Date): void {
-        if (this.startDate < endDate ) {
-            this.endDate = endDate;
-        }
     }
 
     public getEndDate(): Date {
