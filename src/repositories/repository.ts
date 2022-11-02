@@ -44,7 +44,7 @@ export abstract class Repository {
   /**
    * find an item of collection by index
    * @param index index of the item to find
-   * @returns 
+   * @returns item to find
    */
   public find(index: number): any {
     if (index < this.getSize())

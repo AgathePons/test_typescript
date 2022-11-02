@@ -12,7 +12,7 @@ export class StagiaireRepository extends Repository {
    */
    public add(item: StagiaireModel): void {
     if (!this.collection.includes(item)) {
-      this.collection.push(item);
+      super.add(item);
     }
   }
 }
