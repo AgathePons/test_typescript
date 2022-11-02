@@ -27,8 +27,7 @@ export class Main {
         poei.title = 'POEI';
         const poec: PoeTypeModel = new PoeTypeModel();
         poec.title ='POEC';
-        console.log(`poei: ${poei.title}, poec: ${poec.title}`);
-        
+
         // init poe
         const poe: PoeModel = new PoeModel;
         poe.title = 'Fullstack Java Angular';
@@ -43,8 +42,14 @@ export class Main {
         stagiaireAgathe.setPoe(poe);
         stagiaireJeanMich.setPoe(poe);
         stagiaireAgathe.setPoe(poe);
+
         console.log(stagiaireAgathe.toString());
+
+        console.log('---------------------------');
         console.log(poe.listStagiaires());
+
+        console.log('---------------------------');
+        console.log(poec.toString());
     }
 }
 

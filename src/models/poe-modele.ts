@@ -4,10 +4,11 @@
  * @version 1.0.0
  */
 
+import { Model } from "./model";
 import { PoeTypeModel } from "./poeType-model";
 import { StagiaireModel } from "./stagiaire-model";
 
- export class PoeModel {
+ export class PoeModel extends Model {
     public title: string = '';
     private startDate: Date = new Date();
     private endDate: Date = new Date();
@@ -64,6 +65,11 @@ import { StagiaireModel } from "./stagiaire-model";
         return this.endDate;
     }
 
+    /**
+     * @override
+     * @see Model::toString
+     * @returns string
+     */
     public toString(): string {
         return `(${this.poeType?.title}) ${this.title} du ${this.startDate.getDate()}/${this.startDate.getMonth() + 1}/${this.startDate.getFullYear()} au ${this.endDate.getDate()}/${this.endDate.getMonth() + 1}/${this.endDate.getFullYear()}`;
     }

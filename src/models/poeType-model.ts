@@ -5,7 +5,9 @@
  */
 // type E ou I une fois set, on peut plus modifier
 
-export class PoeTypeModel {
+import { Model } from "./model";
+
+export class PoeTypeModel extends Model {
   private _title: string = '';
 
   // we can use the get or set keyword in typescript, and when we try to access with foo.title, it wll use the get/set method by default
