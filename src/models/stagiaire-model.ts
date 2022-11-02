@@ -26,14 +26,13 @@ export class StagiaireModel {
 
     public setPoe(poe: PoeModel): void {
         this.poe = poe;
-        this.poe.addStagiaire(this)
+        this.poe.addStagiaire(this);
     }
 
     public toString(): string {
         return `
             ${this.firstName} ${this.lastName} : ${this.birthDate.getDate()}/${this.birthDate.getMonth() + 1}/${this.birthDate.getFullYear()}
             dans la POE ${this.poe.toString()}
-            
         `;
     }
 }

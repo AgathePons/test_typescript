@@ -19,10 +19,10 @@ import { StagiaireModel } from "./stagiaire-model";
     }
 
     public listStagiaires(): string {
-        let output: string = `Liste des stagiaires de ${this.title}`;
+        let output: string = `Liste des stagiaires de ${this.title}:\n`;
         if (this.stagiaires.length) {
             for (let stagiaire of this.stagiaires) {
-                output += `${stagiaire.firstName} ${stagiaire.lastName}\n`;
+                output += `- ${stagiaire.firstName} ${stagiaire.lastName}\n`;
             }
         }
         else {
