@@ -7,6 +7,7 @@
 import { PoeModel } from "./models/poe-modele";
 import { StagiaireModel } from "./models/stagiaire-model";
 import { PoeTypeModel } from "./models/poeType-model";
+import { StagiaireRepository } from "./repositories/stagiaire-repository";
 
 export class Main {
     public constructor() {
@@ -50,6 +51,16 @@ export class Main {
 
         console.log('---------------------------');
         console.log(poec.toString());
+
+        console.log('---------------------------');
+        const stagiaireRepository: StagiaireRepository = new StagiaireRepository();
+        stagiaireRepository.add(stagiaireAgathe);
+        stagiaireRepository.add(stagiaireJeanMich);
+        stagiaireRepository.add(stagiaireAgathe);
+        console.log(stagiaireRepository.getSize());
+        stagiaireRepository.remove(stagiaireAgathe);
+        console.log(stagiaireRepository.getCollection());
+        
     }
 }
 
