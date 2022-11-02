@@ -20,9 +20,6 @@ import { StagiaireModel } from "./stagiaire-model";
         if (this.poeType === undefined) {
             this.poeType = poeType;
         }
-        else {
-            console.log('already set');
-        }
     }
 
     public getType(): PoeTypeModel | undefined {

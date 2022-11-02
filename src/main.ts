@@ -45,7 +45,6 @@ export class Main {
         stagiaireAgathe.setPoe(poe);
         console.log(stagiaireAgathe.toString());
         console.log(poe.listStagiaires());
-
     }
 }
 
