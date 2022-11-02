@@ -6,6 +6,7 @@
 
 import { PoeModel } from "./models/poe-modele";
 import { StagiaireModel } from "./models/stagiaire-model";
+import { PoeTypeModel } from "./models/poeType-model";
 
 export class Main {
     public constructor() {
@@ -21,9 +22,19 @@ export class Main {
         stagiaireJeanMich.firstName = 'Jean-Mich';
         stagiaireJeanMich.lastName = 'Much';
 
+        // init poe types
+        const poei: PoeTypeModel = new PoeTypeModel();
+        poei.title = 'POEI';
+        const poec: PoeTypeModel = new PoeTypeModel();
+        poec.title ='POEC';
+        console.log(`poei: ${poei.title}, poec: ${poec.title}`);
+        
         // init poe
         const poe: PoeModel = new PoeModel;
         poe.title = 'Fullstack Java Angular';
+        
+        poe.setType(poei);
+        poe.setType(poec);
 
         // try to success
         poe.setDates(new Date(2020, 3, 4), new Date(2021, 3, 6));
@@ -34,6 +45,7 @@ export class Main {
         stagiaireAgathe.setPoe(poe);
         console.log(stagiaireAgathe.toString());
         console.log(poe.listStagiaires());
+
     }
 }
 
