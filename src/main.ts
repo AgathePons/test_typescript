@@ -8,6 +8,7 @@ import { PoeModel } from "./models/poe-modele";
 import { StagiaireModel } from "./models/stagiaire-model";
 import { PoeTypeModel } from "./models/poeType-model";
 import { StagiaireRepository } from "./repositories/stagiaire-repository";
+import { PrintNameAndBirthdateStrategy } from "./models/strategies/print-name-and-birthdate-strategy";
 
 export class Main {
     public constructor() {
@@ -59,9 +60,10 @@ export class Main {
         stagiaireRepository.add(stagiaireAgathe);
         console.log(stagiaireRepository.getSize());
         //stagiaireRepository.remove(stagiaireAgathe);
-        console.log(stagiaireRepository.getCollection());
+        console.log(stagiaireRepository.getSize());
         console.log(stagiaireRepository.toString());
-        
+        stagiaireAgathe.setPrintStrategy(new PrintNameAndBirthdateStrategy);
+        console.log(stagiaireAgathe.toString());
         
     }
 }

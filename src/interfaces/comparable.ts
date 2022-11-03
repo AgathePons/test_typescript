@@ -4,6 +4,7 @@
  * @version 1.0.0
  */
 
+// we want to compare a specific Type <T>
 export interface Comparable<T> {
   /**
  * compare an element with the element given in argument

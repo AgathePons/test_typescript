@@ -7,13 +7,22 @@
 import { Comparable } from "../interfaces/comparable";
 import { Model } from "./model";
 import { PoeModel } from "./poe-modele";
+import { IPrintStagiaireStrategy } from "./strategies/i-print-stagiaire-strategy";
+import { PrintNameLastnameStrategy } from "./strategies/print-name-lastname-strategy";
 
+/**
+ * StagiaireModel
+ * @extends Model
+ * @implements Comparable<StagiaireModel>
+ */
 export class StagiaireModel extends Model implements Comparable<StagiaireModel> {
 
     public firstName: string = '';
     public lastName: string = '';
     private birthDate: Date = new Date();
     private poe: PoeModel = new PoeModel();
+    // we can define an inteface as type of object
+    private printStrategy: IPrintStagiaireStrategy = new PrintNameLastnameStrategy();
 
     public setBirthDate(birthDate : Date): void {
         const today: Date = new Date();
@@ -44,6 +53,10 @@ export class StagiaireModel extends Model implements Comparable<StagiaireModel> 
         return 0;
     }
 
+    setPrintStrategy(strategy: IPrintStagiaireStrategy): void {
+        this.printStrategy = strategy;
+    }
+
     // the toString method overrides the toString from Model
     /**
      * @override
@@ -51,9 +64,6 @@ export class StagiaireModel extends Model implements Comparable<StagiaireModel> 
      * @returns string
      */
     public toString(): string {
-        return `
-            ${this.firstName} ${this.lastName} : ${this.birthDate.getDate()}/${this.birthDate.getMonth() + 1}/${this.birthDate.getFullYear()}
-            dans la POE ${this.poe.toString()}
-        `;
+        return this.printStrategy.print();
     }
 }
