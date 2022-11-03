@@ -14,6 +14,6 @@ import { IPrintStagiaireStrategy } from "./i-print-stagiaire-strategy";
  */
 export class PrintNameAndBirthdateStrategy implements IPrintStagiaireStrategy {
   print(stagiaire: StagiaireModel): string {
-    return `${stagiaire.lastName} ${stagiaire.firstName}: ${DateHelpers.toSlashEuropeanDate(stagiaire.getBirthDate())}`;
+    return `${stagiaire.lastName} ${stagiaire.firstName}: ${DateHelpers.toFriendlyFrenchDate(stagiaire.getBirthDate())}`;
   }
 }
