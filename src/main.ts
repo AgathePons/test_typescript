@@ -9,6 +9,7 @@ import { StagiaireModel } from "./models/stagiaire-model";
 import { PoeTypeModel } from "./models/poeType-model";
 import { StagiaireRepository } from "./repositories/stagiaire-repository";
 import { PrintNameAndBirthdateStrategy } from "./models/strategies/print-name-and-birthdate-strategy";
+import { PrintFullStagiaireStrategy } from "./models/strategies/print-full-stagiaire-strategy";
 
 export class Main {
     public constructor() {
@@ -58,12 +59,11 @@ export class Main {
         stagiaireRepository.add(stagiaireAgathe);
         stagiaireRepository.add(stagiaireJeanMich);
         stagiaireRepository.add(stagiaireAgathe);
-        console.log(stagiaireRepository.getSize());
-        //stagiaireRepository.remove(stagiaireAgathe);
-        console.log(stagiaireRepository.getSize());
         console.log(stagiaireRepository.toString());
-        stagiaireAgathe.setPrintStrategy(new PrintNameAndBirthdateStrategy);
+        stagiaireAgathe.setPrintStrategy(new PrintNameAndBirthdateStrategy());
         console.log(stagiaireAgathe.toString());
+        stagiaireJeanMich.setPrintStrategy(new PrintFullStagiaireStrategy());
+        console.log(stagiaireJeanMich.toString());
         
     }
 }

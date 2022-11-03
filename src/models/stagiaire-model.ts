@@ -41,6 +41,10 @@ export class StagiaireModel extends Model implements Comparable<StagiaireModel> 
         this.poe.addStagiaire(this);
     }
 
+    public getPoe(): PoeModel {
+        return this.poe;
+    }
+
     public compare(t: StagiaireModel): number {
         const meBirthDate: number = this.birthDate.getFullYear();
         const theirBirthDate: number = t.birthDate.getFullYear();
@@ -64,6 +68,6 @@ export class StagiaireModel extends Model implements Comparable<StagiaireModel> 
      * @returns string
      */
     public toString(): string {
-        return this.printStrategy.print();
+        return this.printStrategy.print(this);
     }
 }
