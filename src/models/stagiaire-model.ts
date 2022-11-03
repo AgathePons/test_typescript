@@ -4,10 +4,12 @@
  * @version 1.0.0
  */
 
+import { Comparable } from "../interfaces/comparable";
 import { Model } from "./model";
 import { PoeModel } from "./poe-modele";
 
-export class StagiaireModel extends Model {
+export class StagiaireModel extends Model implements Comparable<StagiaireModel> {
+
     public firstName: string = '';
     public lastName: string = '';
     private birthDate: Date = new Date();
@@ -28,6 +30,18 @@ export class StagiaireModel extends Model {
     public setPoe(poe: PoeModel): void {
         this.poe = poe;
         this.poe.addStagiaire(this);
+    }
+
+    public compare(t: StagiaireModel): number {
+        const meBirthDate: number = this.birthDate.getFullYear();
+        const theirBirthDate: number = t.birthDate.getFullYear();
+        if (meBirthDate > theirBirthDate) {
+            return 1;
+        }
+        else if (meBirthDate < theirBirthDate) {
+            return -1;
+        }
+        return 0;
     }
 
     // the toString method overrides the toString from Model
