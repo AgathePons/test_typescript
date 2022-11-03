@@ -5,14 +5,15 @@
  */
 
 // protected : visible in this class and the classes that extend this class
-export abstract class Repository {
-  protected collection: Array<any> = [];
+// <T> the T means we want to have a specifique type (defined when instancied), the class has became generic
+export abstract class Repository<T> {
+  protected collection: Array<T> = [];
 
   /**
    * get  collection
    * @returns [] the collection
    */
-  public getCollection(): Array<any> {
+  public getCollection(): Array<T> {
     return this.collection;
   }
 
@@ -28,21 +29,22 @@ export abstract class Repository {
    * find first item of collection
    * @returns <any> first item of collection
    */
-  public findFirst(): any {
+  public findFirst(): T | null {
     if (this.hasElement()) {
       return this.collection[0];
     }
+    return null;
   }
 
   /**
    * find last item of collection
    * @returns <any> last item of collection
    */
-  public findLast(): any {
+  public findLast(): T | null {
     if (this.hasElement()) {
       return this.collection[this.collection.length - 1];
     }
-    
+    return null;
   }
 
   /**
@@ -50,16 +52,18 @@ export abstract class Repository {
    * @param index index of the item to find
    * @returns item to find
    */
-  public find(index: number): any {
-    if (index < this.getSize())
-    return this.collection[index];
+  public find(index: number): T | null {
+    if (index < this.getSize()) {
+      return this.collection[index];
+    }
+    return null;
   }
 
   /**
    * add an item in collection
    * @param item item to add
    */
-  public add(item: any): void {
+  public add(item: T): void {
     this.collection.push(item);
   }
 
@@ -67,7 +71,7 @@ export abstract class Repository {
    * remove an item in collection
    * @param item item to remove if exists
    */
-  public remove(item: any): void {
+  public remove(item: T): void {
     if (this.collection.includes(item)) {
       this.collection.splice(this.collection.indexOf(item), 1);
     }

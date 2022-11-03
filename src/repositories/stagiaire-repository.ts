@@ -7,7 +7,8 @@
 import { StagiaireModel } from "../models/stagiaire-model";
 import { Repository } from "./repository";
 
-export class StagiaireRepository extends Repository {
+// Because we want a type (see repository.ts), we have to specify the type here
+export class StagiaireRepository extends Repository<StagiaireModel> {
   /**
    * add a stagiaire in collection
    * @override
@@ -16,7 +17,7 @@ export class StagiaireRepository extends Repository {
    */
    public add(item: StagiaireModel): void {
     if (!this.collection.includes(item)) {
-      super.add(item); // super  : ref à la class parent
+      super.add(item); // super : ref à la class parent
     }
   }
 }
