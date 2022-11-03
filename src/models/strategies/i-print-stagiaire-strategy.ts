@@ -4,6 +4,8 @@
  * @version 1.0.0
  */
 
+import { StagiaireModel } from "../stagiaire-model";
+
 export interface IPrintStagiaireStrategy {
-  print(): string;
+  print(stagiaire: StagiaireModel): string;
 }

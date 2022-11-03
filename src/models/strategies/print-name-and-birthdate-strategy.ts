@@ -4,11 +4,12 @@
  * @version 1.0.0
  */
 
+import { StagiaireModel } from "../stagiaire-model";
 import { IPrintStagiaireStrategy } from "./i-print-stagiaire-strategy";
 
 
 export class PrintNameAndBirthdateStrategy implements IPrintStagiaireStrategy {
-  print(): string {
-    return 'have to return name and birthdate';
+  print(stagiaire: StagiaireModel): string {
+    return `${stagiaire.lastName} ${stagiaire.firstName}: ${stagiaire.getBirthDate().getDate()}/${stagiaire.getBirthDate().getMonth() + 1}/${stagiaire.getBirthDate().getFullYear()}`;
   }
 }

@@ -4,10 +4,11 @@
  * @version 1.0.0
  */
 
+import { StagiaireModel } from "../stagiaire-model";
 import { IPrintStagiaireStrategy } from "./i-print-stagiaire-strategy";
 
 export class PrintNameLastnameStrategy implements IPrintStagiaireStrategy {
-  public print(): string {
-    return 'have to return lastname and firstname';
+  public print(stagiaire: StagiaireModel): string {
+    return `${stagiaire.lastName} ${stagiaire.firstName}`;
   }
 }
