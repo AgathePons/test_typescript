@@ -4,6 +4,7 @@
  * @version 1.0.0
  */
 
+import { DateHelpers } from "../helpers/date-helpers";
 import { Model } from "./model";
 import { PoeTypeModel } from "./poeType-model";
 import { StagiaireModel } from "./stagiaire-model";
@@ -71,6 +72,6 @@ import { StagiaireModel } from "./stagiaire-model";
      * @returns string
      */
     public toString(): string {
-        return `(${this.poeType?.title}) ${this.title} du ${this.startDate.getDate()}/${this.startDate.getMonth() + 1}/${this.startDate.getFullYear()} au ${this.endDate.getDate()}/${this.endDate.getMonth() + 1}/${this.endDate.getFullYear()}`;
+        return `(${this.poeType?.title}) ${this.title} du ${DateHelpers.toSlashEuropeanDate(this.getStartDate())} au ${DateHelpers.toSlashEuropeanDate(this.getStartDate())}`;
     }
 }
