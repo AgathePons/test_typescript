@@ -7,6 +7,10 @@
 
 import { Model } from "./model";
 
+/**
+ * PoeTypeModel
+ * @extends Model
+ */
 export class PoeTypeModel extends Model {
   private _title: string = '';
 

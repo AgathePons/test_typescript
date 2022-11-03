@@ -9,6 +9,11 @@ import { Model } from "./model";
 import { PoeTypeModel } from "./poeType-model";
 import { StagiaireModel } from "./stagiaire-model";
 
+/**
+ * PoeModel
+ * @extends Model
+ */
+
  export class PoeModel extends Model {
     public title: string = '';
     private startDate: Date = new Date();

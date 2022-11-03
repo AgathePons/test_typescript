@@ -64,7 +64,6 @@ export class Main {
         console.log(stagiaireAgathe.toString());
         stagiaireJeanMich.setPrintStrategy(new PrintFullStagiaireStrategy());
         console.log(stagiaireJeanMich.toString());
-        
     }
 }
 

@@ -7,6 +7,10 @@
 import { StagiaireModel } from "../stagiaire-model";
 import { IPrintStagiaireStrategy } from "./i-print-stagiaire-strategy";
 
+/**
+ * PrintNameLastnameStrategy
+ * @implements IPrintStagiaireStrategy
+ */
 export class PrintNameLastnameStrategy implements IPrintStagiaireStrategy {
   public print(stagiaire: StagiaireModel): string {
     return `${stagiaire.lastName} ${stagiaire.firstName}`;
