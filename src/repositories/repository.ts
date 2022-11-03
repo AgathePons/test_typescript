@@ -11,7 +11,7 @@ export abstract class Repository<T> {
 
   /**
    * get  collection
-   * @returns [] the collection
+   * @returns {<T>[]} the collection
    */
   public getCollection(): Array<T> {
     return this.collection;
@@ -77,7 +77,7 @@ export abstract class Repository<T> {
     }
   }
 
-  private hasElement(): boolean {
+  public hasElement(): boolean {
     return this.getSize() > 0;
   }
 }

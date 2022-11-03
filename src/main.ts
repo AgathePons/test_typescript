@@ -58,8 +58,10 @@ export class Main {
         stagiaireRepository.add(stagiaireJeanMich);
         stagiaireRepository.add(stagiaireAgathe);
         console.log(stagiaireRepository.getSize());
-        stagiaireRepository.remove(stagiaireAgathe);
+        //stagiaireRepository.remove(stagiaireAgathe);
         console.log(stagiaireRepository.getCollection());
+        console.log(stagiaireRepository.toString());
+        
         
     }
 }
