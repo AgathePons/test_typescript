@@ -8,6 +8,10 @@
 export abstract class Repository {
   protected collection: Array<any> = [];
 
+  /**
+   * get  collection
+   * @returns [] the collection
+   */
   public getCollection(): Array<any> {
     return this.collection;
   }
@@ -25,7 +29,7 @@ export abstract class Repository {
    * @returns <any> first item of collection
    */
   public findFirst(): any {
-    if (this.getSize()) {
+    if (this.hasElement()) {
       return this.collection[0];
     }
   }
@@ -35,7 +39,7 @@ export abstract class Repository {
    * @returns <any> last item of collection
    */
   public findLast(): any {
-    if (this.getSize()) {
+    if (this.hasElement()) {
       return this.collection[this.collection.length - 1];
     }
     
@@ -67,5 +71,9 @@ export abstract class Repository {
     if (this.collection.includes(item)) {
       this.collection.splice(this.collection.indexOf(item), 1);
     }
+  }
+
+  private hasElement(): boolean {
+    return this.getSize() > 0;
   }
 }
