@@ -14,7 +14,7 @@ export class StagiaireRepository extends Repository<StagiaireModel> implements P
    * add a stagiaire in collection
    * @override
    * @see Repository::add
-   * @param StagiaireModel stagiaire to add
+   * @param item stagiaire to add
    */
    public add(item: StagiaireModel): void {
     if (!this.collection.includes(item)) {
@@ -23,13 +23,14 @@ export class StagiaireRepository extends Repository<StagiaireModel> implements P
   }
 
   /**
-   * 
+   * toString method to display info for StagiaireRpository
+   * @see Printable interface
    * @returns {string}
    */
   public toString(): string {
     let output: string = `Items: ${this.collection.length}`;
     if (super.hasElement()) {
-      const firstItem: StagiaireModel = this.findFirst()!;
+      const firstItem: StagiaireModel = this.findFirst()!; // the use of ! means required not null
       output += `, first element is ${firstItem.toString()}`;
     }
     return output;
