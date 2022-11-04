@@ -51,6 +51,6 @@ Getter and setter are twi kinds of method.
 - **Getter**: `getSomething()` allows to get the value of a class intance property, it returns the value. It has to be `public` to be reachable from the outside of the class.
 - **Setter**: `setSomething(valueToSet)` allows to set a vlue to a class instance property. It takes **one** (and only one) parameter (the value to set) and does not return anything.
 
-Usually, we have both getter and setter, but it is not mandatory, we can have just the getter, or just the setter regarding the logic we have to implemant.
+Usually, we have both getter and setter, but it is not mandatory, we can have just the getter, or just the setter regarding the logic we have to implemant. It has to be `public` too.
 
 ## Constructor
