@@ -91,3 +91,22 @@ public construct(firstName, lastName, favoriteColor) {
   this.favoriteColor = favoriteColor;
 }
 ```
+
+In other languages (Java for example), it is possible to define many constructors. The constructor to use is automatically called regarding the signature of the arguments given.
+
+## Generalization / specialization
+
+The possibility to extend a class allows to define a "general" class, and "special" classes that extend the "general" classe to inherit the attributes/methods of the "general" class, and define more specific attributes/methods in the "special" classes.
+
+## Abstract class
+
+An abstract class is a kind of class that cannot be instanciated. The methods of an abstract class are available without creating an instance of the class.  
+For example, `Math` is an abstract class that gives access to many methods like `random()`, `floor()`, `round()`...
+
+Those methods can be called:
+
+```js
+const number = Math.random();
+```
+
+To define an abstract class, we use the keyword `abstract`.
