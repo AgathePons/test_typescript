@@ -109,4 +109,12 @@ Those methods can be called:
 const number = Math.random();
 ```
 
+We can also use abstract classes to define "general" classes that are extended by "specific" classes that can be instanciated.
+
 To define an abstract class, we use the keyword `abstract`.
+
+## Abstract method
+
+An abstract method has to be in an abstract class. It is defined like in an interface. It means if a class A and a class B extend a class C which has an abstract method `doSomething()`, that means that classes A and B have to implement a method `doSomething()`.
+
+Unlike interfaces, abstract methods from abstract classes are distributed vertically (interfaces are distributed horizontally).
