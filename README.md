@@ -54,3 +54,40 @@ Getter and setter are twi kinds of method.
 Usually, we have both getter and setter, but it is not mandatory, we can have just the getter, or just the setter regarding the logic we have to implemant. It has to be `public` too.
 
 ## Constructor
+
+The constructor is an optional method which can be defined in a class. If a class has a constructor, the method is automatically called when an instance of the calss is created.  
+A constructor never defines a return value.  
+A constructor can takes parameters.
+
+Usually, it is used only when it is necessary, and to initiate an object but it is a bad practice to have a constructor with too many parameters. The risk of inverted arguments is too high.  
+So we can define a constructor with only a few parameters.
+
+## Constructor and inheritance
+
+If a class A extends a class B with a constructor, the class A has to have a constructor, at least the constructor of class B with the keyword `super`.
+
+Class B:
+
+```js
+public construct(firstName, lastName) {
+  this.fistName = firstName;
+  this.lastName = lastName;
+}
+```
+
+Class A:
+
+```js
+public construct(firstName, lastName) {
+  super(firstName, lastNAme);
+}
+```
+
+It is possible to add other paramerters or logic in the constructor of the class A:
+
+```js
+public construct(firstName, lastName, favoriteColor) {
+  super(firstName, lastNAme);
+  this.favoriteColor = favoriteColor;
+}
+```
